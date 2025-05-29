@@ -5,7 +5,7 @@
 $\*$: Equal contribution. $†$: Corrsponding author.
 
 
-<a href=""><img src="https://img.shields.io/badge/ArXiv-2505.21050-brightgreen"></a> 
+<a href=""><img src="https://img.shields.io/badge/ArXiv-brightgreen"></a> 
 ---
 ## :tv: Video
 </div>
