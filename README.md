@@ -4,8 +4,8 @@
 
 $\*$: Equal contribution. $†$: Corrsponding author.
 
-[Paper PDF (Arxiv)]() | [Project Page]() 
 
+<a href="https://arxiv.org/abs/2505.21050"><img src="https://img.shields.io/badge/ArXiv-2505.21050-brightgreen"></a> 
 ---
 ## :tv: Video
 </div>
