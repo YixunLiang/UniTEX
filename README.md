@@ -5,7 +5,7 @@
 $\*$: Equal contribution. $†$: Corrsponding author.
 
 
-<a href=""><img src="https://img.shields.io/badge/ArXiv-brightgreen"></a> 
+<a href="https://arxiv.org/abs/2505.23253"><img src="https://img.shields.io/badge/ArXiv-2505.23253-brightgreen"></a> 
 ---
 ## :tv: Video
 </div>
@@ -44,11 +44,16 @@ Comming soon!
 Comming soon!
 
 ## 📍 Citation 
+If you find this project useful for your research, please cite: 
+
 ```
-@article{
+@article{liang2025UnitTEX,
+  title={UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes},
+  author={Yixun Liang and Kunming Luo and Xiao Chen and Rui Chen and Hongyu Yan and Weiyu Li and Jiarui Liu and Ping Tan},
+  journal={arXiv preprint arXiv:2505.23253},
+  year={2025}
 }
 ```
-
 ## 7. Acknowledgments
 We would like to thank the following projects: [FLUX](https://github.com/black-forest-labs/flux), [DINOv2](https://github.com/facebookresearch/dinov2), [CLAY](https://arxiv.org/abs/2406.13897), [Michelango](https://github.com/NeuralCarver/Michelangelo), [CraftsMan3D](https://github.com/wyysf-98/CraftsMan3D), [TripoSG](https://github.com/VAST-AI-Research/TripoSG), [Dora](https://github.com/Seed3D/Dora), [Hunyuan3D 2.0](https://github.com/Tencent/Hunyuan3D-2), [FlashVDM](https://github.com/Tencent/FlashVDM)
 , [diffusers](https://github.com/huggingface/diffusers) and [HuggingFace](https://huggingface.co) for their open exploration and contributions. We would also like to express our gratitude to the closed-source 3D generative platforms [Tripo](https://www.tripo3d.ai/), [Rodin](https://hyper3d.ai/), and [Hunyuan2.5](https://3d.hunyuan.tencent.com/) for providing such impressive geometry resources to the community. We sincerely appreciate their efforts and contributions.
