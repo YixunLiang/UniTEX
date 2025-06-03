@@ -83,7 +83,7 @@ python run.py
 ```
 to run our given example.
 
-##Note##: SR
+SR:
 if you want to use super_resolutions, prepare the ckpts of SR model [TSD_SR](https://github.com/Microtreei/TSD-SR) 
 and change the default dir in `` TSD_SR/sr_pipeline.py ln 30-32``
 ```
