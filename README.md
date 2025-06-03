@@ -31,17 +31,68 @@ Existing approaches predominantly rely on UV-based inpainting to refine textures
 <div align=center>
 <img src="assets/pipeline.png" width="95%"/>  
 </div>
+
 ## 🚧 Todo
 
-- [ ] Release the basic texturing codes and flux checkpoints (lora)
-- [ ] Release the training code of flux
-- [ ] Release LTM checkpoints
+- [x] Release the basic texturing codes with flux lora checkpoints
+- [ ] Release the training code of flux (lora) (soon!)
+- [ ] Release LTM checkpoints [after paper accepted]
 
+**Note** Our framework filters out the geometry edge and some conflicting points and uses LTM to inpaint them. Therefore, the current results without LTM may contain more artifacts compared to those presented in the paper. we will release full pipeline after paper is accpeted.
 ## 🔧 Installation
-Comming soon!
+run  ```bash env.sh``` to prepare your environment.
 
-## 🔧 How to use？
-Comming soon!
+Download the checkpoints from [Hugging Face](https://huggingface.co/coolbeam/UniTex). and prepare your ``pretrain_models folder`` following bellow structure:
+```
+{pretrain_models_root}
+├──black-forest-labs
+    ├── FLUX.1-dev
+    ├── FLUX.1-Redux-dev
+    └── ...  
+├──UniTex
+    ├── delight
+    └── texture_gen
+...                
+```
+
+and then replace the Ln 3 in ''run.py'' as:
+```
+rgb_tfp = CustomRGBTextureFullPipeline(pretrain_models={pretrain_models_root},
+                                        super_resolutions=False,
+                                        seed = 63)        
+```
+## How to use？
+Run the following code after your prepared the lora weights and set the corresponding ``dir`` in ``pretrain_models``:
+```
+from pipeline import CustomRGBTextureFullPipeline
+import os
+rgb_tfp = CustomRGBTextureFullPipeline(pretrain_models={pretrain_models_root},
+                                        super_resolutions=False,
+                                        seed = 63)
+
+test_image_path = {your reference image}
+test_mesh_path = {your input mesh}
+save_root = 'outputs/{your save folder}'
+os.makedirs(save_root, exist_ok=True)
+rgb_tfp(save_root, test_image_path, test_mesh_path, clear_cache=False)
+```
+
+you can also use
+```
+python run.py
+```
+to run our given example.
+
+##Note##: SR
+if you want to use super_resolutions, prepare the ckpts of SR model [TSD_SR](https://github.com/Microtreei/TSD-SR) 
+and change the default dir in `` TSD_SR/sr_pipeline.py ln 30-32``
+```
+parser.add_argument("--pretrained_model_name_or_path", type=str, default="stabilityai/stable-diffusion-3-medium-diffusers/", help='path to the pretrained sd3')
+parser.add_argument("--lora_dir", type=str, default="your_lora_dir", help='path to tsd-sr lora weights')
+parser.add_argument("--embedding_dir", type=str, default="your_emb_dir", help='path to prompt embeddings')
+```
+
+Then, tune ``super_resolutions``  in ``run.py`` to true.
 
 ## 📍 Citation 
 If you find this project useful for your research, please cite: 
@@ -55,5 +106,4 @@ If you find this project useful for your research, please cite:
 }
 ```
 ## 7. Acknowledgments
-We would like to thank the following projects: [FLUX](https://github.com/black-forest-labs/flux), [DINOv2](https://github.com/facebookresearch/dinov2), [CLAY](https://arxiv.org/abs/2406.13897), [Michelango](https://github.com/NeuralCarver/Michelangelo), [CraftsMan3D](https://github.com/wyysf-98/CraftsMan3D), [TripoSG](https://github.com/VAST-AI-Research/TripoSG), [Dora](https://github.com/Seed3D/Dora), [Hunyuan3D 2.0](https://github.com/Tencent/Hunyuan3D-2), [FlashVDM](https://github.com/Tencent/FlashVDM)
-, [diffusers](https://github.com/huggingface/diffusers) and [HuggingFace](https://huggingface.co) for their open exploration and contributions. We would also like to express our gratitude to the closed-source 3D generative platforms [Tripo](https://www.tripo3d.ai/), [Rodin](https://hyper3d.ai/), and [Hunyuan2.5](https://3d.hunyuan.tencent.com/) for providing such impressive geometry resources to the community. We sincerely appreciate their efforts and contributions.
+We would like to thank the following projects: [FLUX](https://github.com/black-forest-labs/flux), [DINOv2](https://github.com/facebookresearch/dinov2), [CLAY](https://arxiv.org/abs/2406.13897), [Michelango](https://github.com/NeuralCarver/Michelangelo), [CraftsMan3D](https://github.com/wyysf-98/CraftsMan3D), [TripoSG](https://github.com/VAST-AI-Research/TripoSG), [Dora](https://github.com/Seed3D/Dora), [Hunyuan3D 2.0](https://github.com/Tencent/Hunyuan3D-2), [TSD_SR](https://github.com/Microtreei/TSD-SR),[Cosmos Tokenizer](https://github.com/NVIDIA/Cosmos-Tokenizer), [diffusers](https://github.com/huggingface/diffusers) and [HuggingFace](https://huggingface.co) for their open exploration and contributions. We would also like to express our gratitude to the closed-source 3D generative platforms [Tripo](https://www.tripo3d.ai/), [Rodin](https://hyper3d.ai/), and [Hunyuan2.5](https://3d.hunyuan.tencent.com/) for providing such impressive geometry resources to the community. We sincerely appreciate their efforts and contributions.
