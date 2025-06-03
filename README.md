@@ -42,7 +42,7 @@ Existing approaches predominantly rely on UV-based inpainting to refine textures
 ## 🔧 Installation
 run  ```bash env.sh``` to prepare your environment.
 
-Download [FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) and [FLUX.1-Redux-dev](https://huggingface.co/spaces/black-forest-labs/FLUX.1-Redux-dev) and the checkpoints of our LoRA in [UniTex](https://huggingface.co/coolbeam/UniTex) from Hugging Face. and prepare your ``pretrain_models folder`` following bellow structure:
+Download [FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev/tree/main) and [FLUX.1-Redux-dev](https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev/tree/main) and the checkpoints of our LoRA in [UniTex](https://huggingface.co/coolbeam/UniTex) from Hugging Face. and prepare your ``pretrain_models folder`` following bellow structure:
 ```
 {pretrain_models_root}
 ├──black-forest-labs
