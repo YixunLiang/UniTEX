@@ -35,7 +35,7 @@ Existing approaches predominantly rely on UV-based inpainting to refine textures
 ## 🚧 Todo
 
 - [x] Release the basic texturing codes with flux lora checkpoints
-- [ ] Release the training code of flux (lora) (soon!)
+- [x] Release the training code of flux (lora) ([UniTEX-FLUX](https://github.com/YixunLiang/UniTEX-FLUX))
 - [ ] Release LTM checkpoints [after paper accepted]
 
 **Note** Our framework filters out the geometry edge and some conflicting points and uses LTM to inpaint them. Therefore, the current results without LTM may contain more artifacts compared to those presented in the paper. we will release full pipeline after paper is accpeted. 
