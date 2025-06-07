@@ -38,9 +38,12 @@ Existing approaches predominantly rely on UV-based inpainting to refine textures
 - [ ] Release the training code of flux (lora) (soon!)
 - [ ] Release LTM checkpoints [after paper accepted]
 
-**Note** Our framework filters out the geometry edge and some conflicting points and uses LTM to inpaint them. Therefore, the current results without LTM may contain more artifacts compared to those presented in the paper. we will release full pipeline after paper is accpeted.
+**Note** Our framework filters out the geometry edge and some conflicting points and uses LTM to inpaint them. Therefore, the current results without LTM may contain more artifacts compared to those presented in the paper. we will release full pipeline after paper is accpeted. 
 ## 🔧 Installation
+
 run  ```bash env.sh``` to prepare your environment.
+
+**Note** We noticed that some users encountered errors when using slangtorch==1.3.7. If you encounter the same issue, you can try reinstalling slangtorch==1.3.4, which should resolve the problem. (Check [This issue](https://github.com/YixunLiang/UniTEX/issues/2#issuecomment-2939913090), it also about how to use our repo under cu121, thanks to [HwanHeo](https://github.com/hwanhuh))
 
 Download [FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev/tree/main) and [FLUX.1-Redux-dev](https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev/tree/main) and the checkpoints of our LoRA in [UniTex](https://huggingface.co/coolbeam/UniTex) from Hugging Face. and prepare your ``pretrain_models folder`` following bellow structure:
 ```
