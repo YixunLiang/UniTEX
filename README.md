@@ -1,6 +1,6 @@
 # UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes
 
-[Yixun Liang](https://yixunliang.github.io/)$^{\*}$ [Kunming Luo](https://coolbeam.github.io)$^{{\*}}$, [Xiao Chen]()$^{{*}}$, [Rui Chen](https://aruichen.github.io), [Hongyu Yan](https://scholar.google.com/citations?user=TeKnXhkAAAAJ&hl=zh-CN), [Weiyu Li](https://weiyuli.xyz),[Jiarui Liu](), [Ping Tan](https://pingtan.people.ust.hk/index.html)$†$
+[Yixun Liang](https://yixunliang.github.io/)$^{\*}$, [Kunming Luo](https://coolbeam.github.io)$^{{\*}}$, [Xiao Chen]()$^{{*}}$, [Rui Chen](https://aruichen.github.io), [Hongyu Yan](https://scholar.google.com/citations?user=TeKnXhkAAAAJ&hl=zh-CN), [Weiyu Li](https://weiyuli.xyz),[Jiarui Liu](), [Ping Tan](https://pingtan.people.ust.hk/index.html)$†$
 
 $\*$: Equal contribution. $†$: Corrsponding author.
 
@@ -96,6 +96,9 @@ parser.add_argument("--embedding_dir", type=str, default="your_emb_dir", help='p
 ```
 
 Then, tune ``super_resolutions``  in ``run.py`` to true.
+
+## Training your own FLUX lora
+We also provide training code for texture generation and de-lighting, which can be adapted for other tasks as well. Please refer to ([UniTEX-FLUX](https://github.com/YixunLiang/UniTEX-FLUX)) for more details.
 
 ## 📍 Citation 
 If you find this project useful for your research, please cite: 
