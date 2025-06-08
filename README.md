@@ -35,7 +35,7 @@ Existing approaches predominantly rely on UV-based inpainting to refine textures
 ## 🚧 Todo
 
 - [x] Release the basic texturing codes with flux lora checkpoints
-- [x] Release the training code of flux (lora) ([UniTEX-FLUX](https://github.com/YixunLiang/UniTEX-FLUX))
+- [x] Release the training code of flux (lora) ([UniTEX-FLUX](https://github.com/lightillusions/UniTEX-FLUX))
 - [ ] Release LTM checkpoints [after paper accepted]
 
 **Note** Our framework filters out the geometry edge and some conflicting points and uses LTM to inpaint them. Therefore, the current results without LTM may contain more artifacts compared to those presented in the paper. we will release full pipeline after paper is accpeted. 
@@ -43,7 +43,7 @@ Existing approaches predominantly rely on UV-based inpainting to refine textures
 
 run  ```bash env.sh``` to prepare your environment.
 
-**Note** We noticed that some users encountered errors when using slangtorch==1.3.7. If you encounter the same issue, you can try reinstalling slangtorch==1.3.4, which should resolve the problem. (Check [This issue](https://github.com/YixunLiang/UniTEX/issues/2#issuecomment-2939913090), it also about how to use our repo under cu121, thanks to [HwanHeo](https://github.com/hwanhuh))
+**Note** We noticed that some users encountered errors when using slangtorch==1.3.7. If you encounter the same issue, you can try reinstalling slangtorch==1.3.4, which should resolve the problem. (Check [This issue](https://github.com/lightillusions/UniTEX/issues/2#issuecomment-2939913090), it also about how to use our repo under cu121, thanks to [HwanHeo](https://github.com/hwanhuh))
 
 Download [FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev/tree/main) and [FLUX.1-Redux-dev](https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev/tree/main) and the checkpoints of our LoRA in [UniTex](https://huggingface.co/coolbeam/UniTex) from Hugging Face. and prepare your ``pretrain_models folder`` following bellow structure:
 ```
@@ -98,7 +98,7 @@ parser.add_argument("--embedding_dir", type=str, default="your_emb_dir", help='p
 Then, tune ``super_resolutions``  in ``run.py`` to true.
 
 ## Training your own FLUX lora
-We also provide training code for texture generation and de-lighting, which can be adapted for other tasks as well. Please refer to ([UniTEX-FLUX](https://github.com/YixunLiang/UniTEX-FLUX)) for more details.
+We also provide training code for texture generation and de-lighting, which can be adapted for other tasks as well. Please refer to ([UniTEX-FLUX](https://github.com/lightillusions/UniTEX-FLUX)) for more details.
 
 ## 📍 Citation 
 If you find this project useful for your research, please cite: 
