@@ -1,0 +1,57 @@
+
+exp_root_dir: "outputs"
+name: "flux-autoencoder/LTM"
+tag: "LTM"
+seed: 0
+
+system_type: "system"
+system:
+  shape_model:
+    pretrained_model_name_or_path: 'ltm_model_weights.bin' #
+    # pretrain_flux_name_or_path: "/mnt/bn/yixun3d/pretrain/test_ckpt_recall/FLUX.1-dev"
+    n_samples: 32768
+    sample_type: mode #mode_sample
+    use_flux_latent_as_query: true
+    with_sharp_data: true
+    use_downsample: true
+    num_latents: 3072 #12288 # 4*32*32 #64
+    plane_res: 64
+    plane_dim_high: 256
+    plane_num: 3
+    width_querier: 64
+    layer_querier: 6
+    embed_dim: 512 #32
+    point_feats: 3 #3 #udf
+    embed_point_feats: False #False
+    out_dim: 3 #4
+    num_freqs: 8
+    include_pi: false
+    heads: 16
+    width: 1024
+    num_decoder_layers: 24
+    use_ln_post: true
+    use_lora: false
+    init_scale: 0.25
+    qkv_bias: false
+    use_flash: true
+    use_checkpoint: true
+    tsdf_threshold: 0.025
+    # multi reso
+    dual_latents: True
+    compress: False
+    use_multi_reso: False
+    resolutions: [4, 2, 1]
+    sampling_prob: [0.1, 0.2, 0.7]
+    mask_ratios: [0.6, 0.4, 0.]
+    mask_ratio_sampling_prob: [0., 0.4, 0.6]
+    use_mask: False
+    use_plane_field: False
+    use_mask_for_embedding: True
+    use_baselatent: True
+    post_query: True
+    block_out_channels: [128, 256, 512, 512]
+    random_mask_kl_ratio: 0.4
+    only_flux_latent_ratio: 1.0
+    direct_query: False
+    add_plane_num: 3
+    plane_num_input: 3
