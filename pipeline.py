@@ -629,7 +629,7 @@ class RGBTextureFullPipeline(RGBTextureFullPipelineBase):
 
 class CustomRGBTextureFullPipeline(RGBTextureFullPipeline):
     # TODO: define step sequence here 'step_1_1',
-    step_seq = ['step_2_ablition'] #
+    step_seq = ['step_1_1','step_2_ablition'] #
     # step_seq = ['step_2_ablition']
 
     # NOTE: steps for debug
